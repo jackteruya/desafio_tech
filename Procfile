@@ -1,1 +1,1 @@
-web: gunicorn desafio_frexco_django --log-file -
+web: gunicorn desafio_frexco_django.wsgi --log-file -
