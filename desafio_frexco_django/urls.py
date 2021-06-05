@@ -15,9 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from cadastrar_cliente.views import home
+from cadastrar_cliente import views
+from django.views.generic import RedirectView
+from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
+from . import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
+    path('customer/all/', views.liste_all_customer),
+    path('customer/detail/<id>/', views.customer_detail),
+    path('login/', views.login_user),
+    path('login/submit', views.submit_login),
+    path('logout/', views.logout_user),
+    path('customer/register/', views.register_customer),
+    path('customer/register/submit', views.set_customer),
+    path('customer/delete/<id>/', views.delete_customer),
+    path('', RedirectView.as_view(url='customer/all/'))
 ]

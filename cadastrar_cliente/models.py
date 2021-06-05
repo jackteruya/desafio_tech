@@ -1,6 +1,9 @@
 from django.db import models
+from cpf_field.models import CPFField
 
 class Customer(models.Model):
-    cpf = models.CharField(max_length=11, unique=True)
+    cpf = CPFField()
     email = models.EmailField()
 
+    def __unicode__(self):
+        return self.cpf

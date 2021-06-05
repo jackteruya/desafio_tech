@@ -1,3 +1,8 @@
+from cadastrar_cliente.models import Customer
 from django.contrib import admin
 
-# Register your models here.
+class CustomerAdmin(admin.ModelAdmin):
+    list_display = ('cpf', 'email')
+    list_filter = ['email']
+
+admin.site.register(Customer, CustomerAdmin)
