@@ -10,10 +10,10 @@ djangorestframework = "*"
 collectfast = "*"
 sqlparse = "*"
 requests = "*"
-python-decouple = "*"
 django-extensions = "*"
 ipython = "*"
 django-ordered-model = "*"
+python-decouple = "*"
 
 [dev-packages]
 flake8 = "*"
