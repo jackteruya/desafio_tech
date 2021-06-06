@@ -17,6 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from cadastrar_cliente import views
 from django.views.generic import RedirectView
+
+from django.urls import include, path
+
+from rest_framework import routers
+from cadastrar_cliente.api import CustomerViewSet
+
+api_router = routers.DefaultRouter()
+api_router.register(r"customers", CustomerViewSet)
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 from . import settings
 
@@ -30,5 +38,6 @@ urlpatterns = [
     path('customer/register/', views.register_customer),
     path('customer/register/submit', views.set_customer),
     path('customer/delete/<id>/', views.delete_customer),
-    path('', RedirectView.as_view(url='customer/all/'))
+    path('', RedirectView.as_view(url='customer/all/')),
+    path('api/', include(api_router.urls)),
 ]
