@@ -16,6 +16,8 @@ django-ordered-model = "*"
 python-decouple = "*"
 dj-database-url = "*"
 django-cpf = "*"
+django-heroku = "*"
+whitenoise = "*"
 
 [dev-packages]
 flake8 = "*"
