@@ -62,6 +62,9 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
+MIDDLEWARE_CLASSES = (
+    'whitenoise.middleware.WhiteNoiseMiddleware',)
+
 ROOT_URLCONF = 'desafio_frexco_django.urls'
 
 TEMPLATES = [
